@@ -16,7 +16,7 @@ class MessagesController < ApplicationController
   def create
     @message = User.last.messages.create!(message_params)
     @messages = Message.all
-    ActionCable.server.broadcast "room_channel",
+    ActionCable.server.broadcast 'room_channel',
                                  content: @message, user: @message.user
     respond_to do |format|
       format.html
