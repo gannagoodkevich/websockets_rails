@@ -1,0 +1,13 @@
+<h1>Messages:</h1>
+<div id="msg">
+  <%= render partial: "messages/message", collection: @messages %>
+</div>
+<%=form_with url: messages_path, remote: true do |form| %>
+  <p>
+    <%=form.text_area :content%>
+  </p>
+
+  <p>
+    <%= form.submit class: "btn btn-primary"%>
+  </p>
+<% end %>

@@ -1,6 +1,11 @@
 Rails.application.routes.draw do
-  resources :users
+  resources :users do
+    collection do
+      get 'main'
+    end
+  end
   resources :messages
 
-  root 'messages#index'
+  mount ActionCable.server => '/cable'
+  root 'messages#main'
 end

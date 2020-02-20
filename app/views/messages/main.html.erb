@@ -1,0 +1,10 @@
+<div id="messages">
+  <h1>Please, log in</h1>
+  <%= link_to "Show comments", new_user_path, {:remote => true, 'data-toggle' =>  "modal", 'data-target' => '#modal-window'} %>
+  <div id="modal-window" class="modal hide fade" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+      </div>
+    </div>
+  </div>
+</div>
